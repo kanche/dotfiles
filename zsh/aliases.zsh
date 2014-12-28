@@ -161,8 +161,8 @@ alias hpr='hub pull-request'
 alias grb='git recent-branches'
 
 # Finder
-alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+#alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+#alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 alias dbtp='spring rake db:test:prepare'
 alias dbm='spring rake db:migrate'
@@ -171,4 +171,4 @@ alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
-alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+#alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
