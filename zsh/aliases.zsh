@@ -3,6 +3,15 @@
 # Don't change. The following determines where YADR is installed.
 yadr=$HOME/.yadr
 
+# Get operating system
+platform='unknown'
+unamestr=$(uname)
+if [[ $unamestr == 'Linux' ]]; then
+  platform='linux'
+elif [[ $unamestr == 'Darwin' ]]; then
+  platform='darwin'
+fi
+
 # YADR support
 alias yav='yadr vim-add-plugin'
 alias ydv='yadr vim-delete-plugin'
@@ -21,9 +30,15 @@ alias cls='clear;ls'
 
 # Show human friendly numbers and colors
 alias df='df -h'
-alias ll='ls -alGh'
-#alias ls='ls -Gh'
 alias du='du -h -d 2'
+
+if [[ $platform == 'linux' ]]; then
+  alias ll='ls -alh --color=auto'
+  alias ls='ls --color=auto'
+elif [[ $platform == 'darwin' ]]; then
+  alias ll='ls -alGh'
+  alias ls='ls -Gh'
+fi
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -38,6 +53,9 @@ MACVIM_INSTALLED=$?
 if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
+
+# mimic vim functions
+alias :q='exit'
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
@@ -161,8 +179,8 @@ alias hpr='hub pull-request'
 alias grb='git recent-branches'
 
 # Finder
-#alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-#alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 alias dbtp='spring rake db:test:prepare'
 alias dbm='spring rake db:migrate'
@@ -171,4 +189,4 @@ alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
-#alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
