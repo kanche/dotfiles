@@ -9,7 +9,7 @@ if filereadable(expand("~/.vimrc.before"))
 endif
 
 " ================ General Config ====================
-set t_Co=16
+
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -75,7 +75,7 @@ filetype indent on
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-set wrap       "Don't wrap lines
+set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
@@ -115,8 +115,3 @@ set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
-
-"================= Subha ===========================
-Plugin 'bling/vim-airline'
-let g:airline_powerline_fonts = 1
-set laststatus=2

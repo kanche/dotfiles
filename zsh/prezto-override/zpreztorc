@@ -26,7 +26,6 @@ zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
-  'pacman' \
   'editor' \
   'history' \
   'directory' \
@@ -35,6 +34,9 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'archive' \
   'fasd' \
+  'git' \
+  'osx' \
+  'ruby' \
   'syntax-highlighting' \
   'history-substring-search' \
   'ssh' \
@@ -45,7 +47,7 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -69,7 +71,7 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 #
 
 # Set the Pacman frontend.
- zstyle ':prezto:module:pacman' frontend 'yaourt'
+# zstyle ':prezto:module:pacman' frontend 'yaourt'
 
 #
 # Prompt
